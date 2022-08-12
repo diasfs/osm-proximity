@@ -1,0 +1,41 @@
+kind: pipeline
+type: docker
+name: osm-arm64
+
+platform:
+  arch: arm64
+  os: linux
+
+trigger:
+  event: 
+  - cron
+  cron:
+  - deploy
+
+steps:
+- name: Download-OSM-Data
+  image: binho85/osm:arm64
+  volumes:
+  - name: cache
+    path: /data
+  environment:
+    DEBIAN_FRONTEND: noninteractive
+  commands:
+  - chmod +x pipelines/osm.sh
+  - pipelines/osm.sh
+
+- name: Extract-POIs
+  image: node
+  volumes:
+  - name: cache
+    path: /data
+  commands:
+  - yarn install
+  - yarn pois:generate
+  - git add . -A
+  - git push -u origin main
+
+volumes:
+  - name: cache
+    host:
+      path: /home/ubuntu/osm-cache
