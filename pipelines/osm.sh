@@ -15,7 +15,7 @@ if [ -f "$PBF_FILENAME" ]; then
     echo "UPDATING $PBF_FILENAME"
     ls /data -lha
     osmupdate "$PBF_FILENAME" "$NEW_PBF_FILENAME" --base-url="$UPDATE_URL"
-    if [ -f "$NEW_PBF_FILENAME"]; then
+    if [ -f "$NEW_PBF_FILENAME" ]; then
         rm -f "$PBF_FILENAME"
         mv "$NEW_PBF_FILENAME" "$PBF_FILENAME"
     else
