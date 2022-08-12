@@ -24,7 +24,7 @@ if [ -f "$PBF_FILENAME" ]; then
 else
     #  download the latest
     echo "DOWNLOADING $DOWNLOAD_URL TO $PBF_FILENAME"
-    wget "$DOWNLOAD_URL" -o "$PBF_FILENAME"
+    wget "$DOWNLOAD_URL" -O "$PBF_FILENAME"
 fi
 
 echo "READING $PBF_FILENAME"
