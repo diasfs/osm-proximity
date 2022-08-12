@@ -28,7 +28,7 @@ else
 fi
 
 echo "READING $PBF_FILENAME"
-osmosis --read-pbf "$PBF_FILENAME" --tf accept-nodes aeroway=aerodrome amenity=atm,bank,bar,bus_station,cafe,car_wash,grave_yard,pharmacy,hospital,library,post_depot,nightclub,parking,police,post_office,school,childcare,university,restaurant craft=bakery shop=beauty,books,convenience,chemist,pet,mall,supermarket landuse=cemetery building=church,stadium leisure=fitness_centre,sports_centre,park,stadium tourism=museum,attraction public_transport=station --tf reject-ways --tf reject-relations --write-xml "$OSM_FILENAME"
+osmosis --read-pbf "$PBF_FILENAME" --tf accept-nodes aeroway=aerodrome amenity=atm,bank,bar,bus_station,cafe,car_wash,grave_yard,pharmacy,hospital,library,post_depot,nightclub,parking,police,post_office,school,childcare,university,restaurant craft=bakery shop=beauty,books,convenience,chemist,pet,mall,supermarket landuse=cemetery building=church,stadium leisure=fitness_centre,sports_centre,park,stadium tourism=museum,attraction public_transport=station --tf reject-ways --tf reject-relations --write-xml "$OSM_NODES_FILENAME"
 
 echo "CONVERTING $OSM_NODES_FILENAME TO $OSM_POI_FILENAME"
 osmconvert "$OSM_NODES_FILENAME" --drop-ways --drop-author --drop-relations --drop-versions > "$OSM_POI_FILENAME"
