@@ -32,12 +32,15 @@ steps:
   commands:
   - yarn install
   - yarn pois:generate
-  - git config user.name "Fábio Dias"
-  - git config user.email binho85@gmail.com
-  - git config gc.auto 0
-  - git add . -A
-  - git commit -m "daily update"
-  - git push -u origin main
+- name: git-push
+  image: appleboy/drone-git-push
+  settings:
+    branch: main
+    remote: git@github.com:diasfs/osm-proximity.git
+    commit: true
+    author_name: Fábio Dias
+    author_email: binho85@gmail.com
+
 
 volumes:
   - name: cache
