@@ -3,7 +3,7 @@ const fs = require("fs")
 const Geohash = require('ngeohash');
 
 //const pois = require(path.join(__dirname, "brasil.poi.json"))
-const pois = "/data/brasil.poi.json"
+const pois = require("/data/brasil.poi.json")
 const data_folder = path.join(path.dirname(__dirname),'poi-data')
 
 fs.mkdirSync(data_folder, { recursive: true })
