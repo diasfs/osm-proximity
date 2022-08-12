@@ -20,6 +20,7 @@ if [ -f "$PBF_FILENAME" ]; then
         mv "$NEW_PBF_FILENAME" "$PBF_FILENAME"
     else
         echo "NO UPDATES AVAILABLE"
+        exit 0
     fi
 else
     #  download the latest
