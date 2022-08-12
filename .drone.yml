@@ -32,6 +32,9 @@ steps:
   commands:
   - yarn install
   - yarn pois:generate
+  - git add . -A
+  - git commit -m "daily update"
+  - git push -u origin main
 
 volumes:
   - name: cache
