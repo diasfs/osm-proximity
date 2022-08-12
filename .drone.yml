@@ -40,6 +40,8 @@ steps:
     commit: true
     author_name: Fábio Dias
     author_email: binho85@gmail.com
+    ssh_key:
+      from_secret: SSH_KEY
 
 
 volumes:
