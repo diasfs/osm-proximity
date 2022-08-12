@@ -1,5 +1,5 @@
 #!/bin/bash
-apt update -y && apt install osmctools -y
+#apt update -y && apt install osmctools -y
 
 PBF_FILENAME=/data/brasil-latest.osm.pbf
 NEW_PBF_FILENAME=/data/brasil-latest-new.osm.pbf
