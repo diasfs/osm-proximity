@@ -34,6 +34,7 @@ steps:
   - yarn pois:generate
   - git config user.name "Fábio Dias"
   - git config user.email binho85@gmail.com
+  - git config gc.auto 0
   - git add . -A
   - git commit -m "daily update"
   - git push -u origin main
